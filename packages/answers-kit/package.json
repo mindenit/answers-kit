@@ -1,0 +1,26 @@
+{
+  "name": "@mindenit/answers-kit",
+  "version": "0.0.0",
+  "description": "Mindenit Answers API client for Node.js",
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": ">= 20.x"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --minify",
+    "playground": "tsx playground.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "mindenit-answers",
+    "answers-kit"
+  ],
+  "author": "Mindenit team",
+  "license": "GPL-3.0-only",
+  "devDependencies": {
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}
