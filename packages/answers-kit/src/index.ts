@@ -1,5 +1,7 @@
 import { CoursesModule } from './modules/courses/index.js';
 import type { ICoursesModule } from './modules/courses/types.js';
+import { FacultiesModule } from './modules/faculties/index.js';
+import type { IFacultiesModule } from './modules/faculties/types.js';
 
 interface AnswersKitConfig {
   apiUrl: string;
@@ -8,6 +10,7 @@ interface AnswersKitConfig {
 export class AnswersKit {
   private readonly apiUrl: string;
   readonly courses: ICoursesModule;
+  readonly faculties: IFacultiesModule;
 
   constructor(config?: AnswersKitConfig) {
     if (config && config.apiUrl.endsWith('/')) {
@@ -19,5 +22,6 @@ export class AnswersKit {
       : 'https://answers.mindenit.org/api';
 
     this.courses = new CoursesModule(this.apiUrl);
+    this.faculties = new FacultiesModule(this.apiUrl);
   }
 }
