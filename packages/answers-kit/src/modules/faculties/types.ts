@@ -1,4 +1,13 @@
-import type { Faculty, RequestHeaders, Subject } from '@/types.js';
+import type {
+  Faculty,
+  RequestHeaders,
+  SortingOptions,
+  Subject,
+} from '@/types.js';
+
+interface FindManyFacultyArgs {
+  sorting?: SortingOptions;
+}
 
 interface CreateFacultyValues {
   name: string;
@@ -26,7 +35,7 @@ interface DeleteFacultyArgs {
 }
 
 interface IFacultiesModule {
-  findMany: () => Promise<Faculty[]>;
+  findMany: (args?: FindManyFacultyArgs) => Promise<Faculty[]>;
   findOneSubjects: (id: number) => Promise<Subject[]>;
   createOne: (args: CreateFacultyArgs) => Promise<Faculty>;
   updateOne: (args: UpdateFacultyArgs) => Promise<Faculty>;
@@ -37,6 +46,7 @@ export type {
   CreateFacultyArgs,
   CreateFacultyValues,
   DeleteFacultyArgs,
+  FindManyFacultyArgs,
   IFacultiesModule,
   UpdateFacultyArgs,
   UpdateFacultyValues,

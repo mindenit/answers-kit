@@ -21,4 +21,20 @@ interface RequestHeaders {
   authorization: string;
 }
 
-export type { Course, Faculty, RequestHeaders, Subject };
+type Order = 'asc' | 'desc';
+type BaseSort = 'id' | 'name';
+
+interface SortingOptions<T extends string = BaseSort> {
+  order?: Order;
+  sortBy?: BaseSort | T;
+}
+
+export type {
+  BaseSort,
+  Course,
+  Faculty,
+  Order,
+  RequestHeaders,
+  SortingOptions,
+  Subject,
+};

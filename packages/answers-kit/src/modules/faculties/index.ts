@@ -1,9 +1,11 @@
 import type { Faculty, Subject } from '@/types.js';
 import { getDefaultHeaders } from '@/utils/headers.js';
 import { handleResult } from '@/utils/result.js';
+import { appendSortingParams } from '@/utils/url.js';
 import type {
   CreateFacultyArgs,
   DeleteFacultyArgs,
+  FindManyFacultyArgs,
   IFacultiesModule,
   UpdateFacultyArgs,
 } from './types.js';
@@ -28,8 +30,9 @@ export class FacultiesModule implements IFacultiesModule {
    * @publicApi
    * */
 
-  async findMany(): Promise<Faculty[]> {
-    const response = await fetch(`${this.url}/faculties`);
+  async findMany(args?: FindManyFacultyArgs): Promise<Faculty[]> {
+    const url = appendSortingParams(`${this.url}/faculties`, args?.sorting);
+    const response = await fetch(url);
 
     return response.json();
   }
@@ -40,6 +43,16 @@ export class FacultiesModule implements IFacultiesModule {
    * @example Example usage:
    * ```ts
    * const subjects = await answersKit.faculties.findOneSubjects(1)
+   * ```
+   *
+   * @example Example usage with sorting:
+   * ```ts
+   * const faculties = await kit.faculties.findMany({
+   *   sorting: {
+   *     order: 'asc',
+   *     sortBy: 'name',
+   *   },
+   * });
    * ```
    *
    * @returns an array of subject objects
