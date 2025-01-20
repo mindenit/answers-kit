@@ -1,9 +1,5 @@
 import type { Faculty, RequestHeaders, Subject } from '@/types.js';
 
-interface GetFacultySubjectsArgs {
-  id: number;
-}
-
 interface CreateFacultyValues {
   name: string;
   brief: string;
@@ -31,7 +27,7 @@ interface DeleteFacultyArgs {
 
 interface IFacultiesModule {
   findMany: () => Promise<Faculty[]>;
-  getFacultySubjects: (args: GetFacultySubjectsArgs) => Promise<Subject[]>;
+  getFacultySubjects: (id: number) => Promise<Subject[]>;
   createOne: (args: CreateFacultyArgs) => Promise<Faculty>;
   updateOne: (args: UpdateFacultyArgs) => Promise<Faculty>;
   deleteOne: (args: DeleteFacultyArgs) => Promise<Faculty>;
@@ -41,7 +37,6 @@ export type {
   CreateFacultyArgs,
   CreateFacultyValues,
   DeleteFacultyArgs,
-  GetFacultySubjectsArgs,
   IFacultiesModule,
   UpdateFacultyArgs,
   UpdateFacultyValues,

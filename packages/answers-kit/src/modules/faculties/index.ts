@@ -4,7 +4,6 @@ import { handleResult } from '@/utils/result.js';
 import type {
   CreateFacultyArgs,
   DeleteFacultyArgs,
-  GetFacultySubjectsArgs,
   IFacultiesModule,
   UpdateFacultyArgs,
 } from './types.js';
@@ -40,9 +39,7 @@ export class FacultiesModule implements IFacultiesModule {
    *
    * @example Example usage:
    * ```ts
-   * const subjects = await answersKit.faculties.getFacultySubjects({
-   *   id: 1
-   * })
+   * const subjects = await answersKit.faculties.getFacultySubjects(1)
    * ```
    *
    * @returns an array of subject objects
@@ -50,7 +47,7 @@ export class FacultiesModule implements IFacultiesModule {
    * @publicApi
    * */
 
-  async getFacultySubjects({ id }: GetFacultySubjectsArgs): Promise<Subject[]> {
+  async getFacultySubjects(id: number): Promise<Subject[]> {
     const response = await fetch(`${this.url}/faculties/${id}/subjects`);
 
     return response.json();
