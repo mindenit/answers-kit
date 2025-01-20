@@ -39,7 +39,7 @@ export class FacultiesModule implements IFacultiesModule {
    *
    * @example Example usage:
    * ```ts
-   * const subjects = await answersKit.faculties.getFacultySubjects(1)
+   * const subjects = await answersKit.faculties.findOneSubjects(1)
    * ```
    *
    * @returns an array of subject objects
@@ -47,7 +47,7 @@ export class FacultiesModule implements IFacultiesModule {
    * @publicApi
    * */
 
-  async getFacultySubjects(id: number): Promise<Subject[]> {
+  async findOneSubjects(id: number): Promise<Subject[]> {
     const response = await fetch(`${this.url}/faculties/${id}/subjects`);
 
     return response.json();
