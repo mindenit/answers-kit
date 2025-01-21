@@ -4,6 +4,8 @@ import { FacultiesModule } from './modules/faculties/index.js';
 import type { IFacultiesModule } from './modules/faculties/types.js';
 import { PingModule } from './modules/ping/index.js';
 import type { IPingModule } from './modules/ping/types.js';
+import { QuestionsModule } from './modules/questions/index.js';
+import type { IQuestionsModule } from './modules/questions/types.js';
 import { StatisticsModule } from './modules/statistics/index.js';
 import type { IStatisticsModule } from './modules/statistics/types.js';
 import { SubjectsModule } from './modules/subjects/index.js';
@@ -26,6 +28,7 @@ export class AnswersKit {
   readonly subjects: ISubjectModule;
   readonly tests: ITestsModule;
   readonly universities: IUniversitiesModule;
+  readonly questions: IQuestionsModule;
 
   constructor(config?: AnswersKitConfig) {
     if (config && config.apiUrl.endsWith('/')) {
@@ -43,5 +46,6 @@ export class AnswersKit {
     this.subjects = new SubjectsModule(this.apiUrl);
     this.tests = new TestsModule(this.apiUrl);
     this.universities = new UniversitiesModule(this.apiUrl);
+    this.questions = new QuestionsModule(this.apiUrl);
   }
 }
