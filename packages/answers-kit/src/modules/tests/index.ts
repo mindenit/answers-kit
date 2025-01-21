@@ -1,4 +1,4 @@
-import type { Question, Test } from '@/types.js';
+import type { Question, Test, TestData, TestResponse } from '@/types.js';
 import { getDefaultHeaders } from '@/utils/headers.js';
 import { handleResult } from '@/utils/result.js';
 import { appendSortingParams } from '@/utils/url.js';
@@ -33,10 +33,10 @@ export class TestsModule implements ITestsModule {
    * @publicApi
    * */
 
-  async findOne({ id }: FindOneTestArgs): Promise<Test> {
+  async findOne({ id }: FindOneTestArgs): Promise<TestData> {
     const response = await fetch(`${this.url}/test/${id}`);
 
-    return handleResult<Test>(response);
+    return handleResult<TestData>(response);
   }
 
   /**
@@ -52,7 +52,7 @@ export class TestsModule implements ITestsModule {
    * @publicApi
    * */
 
-  async findMany(args?: FindManyTestArgs): Promise<Test[]> {
+  async findMany(args?: FindManyTestArgs): Promise<TestResponse> {
     const url = appendSortingParams(`${this.url}/tests`, args?.sorting);
     const response = await fetch(url);
 

@@ -3,6 +3,8 @@ import type {
   RequestHeaders,
   SortingOptions,
   Test,
+  TestData,
+  TestResponse,
 } from '@/types.js';
 
 type TestSortableFields = 'year';
@@ -73,8 +75,8 @@ interface CreateTestQuestionsArgs {
 }
 
 interface ITestsModule {
-  findOne: (args: FindOneTestArgs) => Promise<Test>;
-  findMany: (args?: FindManyTestArgs) => Promise<Test[]>;
+  findOne: (args: FindOneTestArgs) => Promise<TestData>;
+  findMany: (args?: FindManyTestArgs) => Promise<TestResponse>;
   findOneQuestions: (args: FindTestQuestionsArgs) => Promise<Question[]>;
   createOne: (args: CreateTestArgs) => Promise<Test>;
   updateOne: (args: UpdateTestArgs) => Promise<Test>;
