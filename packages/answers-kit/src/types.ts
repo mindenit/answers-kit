@@ -17,6 +17,12 @@ interface Subject {
   facultyId: number;
 }
 
+interface University {
+  id: number;
+  name: string;
+  brief: string;
+}
+
 interface Statistics {
   courses: number;
   faculties: number;
@@ -75,4 +81,5 @@ export type {
   Statistics,
   Subject,
   Test,
+  University,
 };
