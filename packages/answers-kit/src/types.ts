@@ -17,6 +17,16 @@ interface Subject {
   facultyId: number;
 }
 
+interface Statistics {
+  courses: number;
+  faculties: number;
+  questions: number;
+  subjects: number;
+  tests: number;
+  universities: number;
+  users: number;
+}
+
 interface RequestHeaders {
   authorization: string;
 }
@@ -36,5 +46,6 @@ export type {
   Order,
   RequestHeaders,
   SortingOptions,
+  Statistics,
   Subject,
 };
