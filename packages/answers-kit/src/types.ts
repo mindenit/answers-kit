@@ -17,6 +17,10 @@ interface Subject {
   facultyId: number;
 }
 
+interface Ping {
+  message: string;
+}
+
 interface Test {
   id: number;
   createdAt: string;
@@ -54,6 +58,7 @@ export type {
   Course,
   Faculty,
   Order,
+  Ping,
   Question,
   RequestHeaders,
   SortingOptions,
