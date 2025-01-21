@@ -17,6 +17,10 @@ interface Subject {
   facultyId: number;
 }
 
+interface Ping {
+  message: string;
+}
+
 interface RequestHeaders {
   authorization: string;
 }
@@ -34,6 +38,7 @@ export type {
   Course,
   Faculty,
   Order,
+  Ping,
   RequestHeaders,
   SortingOptions,
   Subject,
