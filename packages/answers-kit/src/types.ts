@@ -37,6 +37,16 @@ interface Ping {
   message: string;
 }
 
+interface TestResponse {
+  data: Test[];
+  meta: TestMeta;
+}
+
+interface TestMeta {
+  count: number;
+  pageSize: number;
+}
+
 interface Test {
   id: number;
   createdAt: string;
@@ -45,6 +55,12 @@ interface Test {
   isVerified: boolean;
   subjectId: number;
   courseId: number;
+}
+
+interface TestData extends Test {
+  course: Course;
+  questions: Question[];
+  subject: Subject;
 }
 
 interface Question {
@@ -81,5 +97,8 @@ export type {
   Statistics,
   Subject,
   Test,
+  TestData,
+  TestMeta,
+  TestResponse,
   University,
 };

@@ -125,6 +125,7 @@ export class CoursesModule implements ICoursesModule {
     const response = await fetch(`${this.url}/courses/${id}`, {
       method: 'DELETE',
       headers: h,
+      body: JSON.stringify({}),
     });
 
     return handleResult<Course>(response);
