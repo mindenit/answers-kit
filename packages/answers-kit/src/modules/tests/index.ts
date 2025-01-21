@@ -34,7 +34,7 @@ export class TestsModule implements ITestsModule {
    * */
 
   async findOne({ id }: FindOneTestArgs): Promise<Test> {
-    const response = await fetch(`${this.url}/tests/${id}`);
+    const response = await fetch(`${this.url}/test/${id}`);
 
     return handleResult<Test>(response);
   }
