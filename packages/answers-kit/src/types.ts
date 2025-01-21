@@ -27,6 +27,30 @@ interface Statistics {
   users: number;
 }
 
+interface Ping {
+  message: string;
+}
+
+interface Test {
+  id: number;
+  createdAt: string;
+  updatedAt: string;
+  year: number;
+  isVerified: boolean;
+  subjectId: number;
+  courseId: number;
+}
+
+interface Question {
+  id: number;
+  createdAt: string;
+  updatedAt: string;
+  name: string;
+  answer: string;
+  isVerified: boolean;
+  testId: number;
+}
+
 interface RequestHeaders {
   authorization: string;
 }
@@ -44,8 +68,11 @@ export type {
   Course,
   Faculty,
   Order,
+  Ping,
+  Question,
   RequestHeaders,
   SortingOptions,
   Statistics,
   Subject,
+  Test,
 };
