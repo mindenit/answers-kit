@@ -18,6 +18,25 @@ export class UniversitiesModule implements IUniversitiesModule {
     this.url = client;
   }
 
+  /**
+   * Retrieve a list of all universities
+   *
+   * @example Example usage:
+   * ```ts
+   * // Get all universities
+   * const universities = await module.findMany()
+   *
+   * // Get universities with sorting
+   * const sortedUniversities = await module.findMany({
+   *   sorting: { orderBy: 'name', order: 'asc' }
+   * })
+   * ```
+   *
+   * @param args Optional sorting parameters
+   * @returns Promise resolving to array of University objects
+   *
+   * @publicApi
+   */
   async findMany(args?: FindManyUniversityArgs): Promise<University[]> {
     const url = appendSortingParams(`${this.url}/universities`, args?.sorting);
     const response = await fetch(url);
@@ -25,6 +44,19 @@ export class UniversitiesModule implements IUniversitiesModule {
     return response.json();
   }
 
+  /**
+   * Get all faculties for a specific university
+   *
+   * @example Example usage:
+   * ```ts
+   * const faculties = await module.findOneFaculties({ id: 1 })
+   * ```
+   *
+   * @param args Object containing university id
+   * @returns Promise resolving to array of Faculty objects
+   *
+   * @publicApi
+   */
   async findOneFaculties({
     id,
   }: FindManyUniversityFacultiesArgs): Promise<Faculty[]> {
@@ -33,6 +65,27 @@ export class UniversitiesModule implements IUniversitiesModule {
     return response.json();
   }
 
+  /**
+   * Create a new university
+   *
+   * @example Example usage:
+   * ```ts
+   * const newUniversity = await module.createOne({
+   *   data: {
+   *     name: "University Name",
+   *     brief: "Brief"
+   *   },
+   *   headers: {
+   *     authorization: "Bearer token"
+   *   }
+   * })
+   * ```
+   *
+   * @param args Object containing university data and auth headers
+   * @returns Promise resolving to created University object
+   *
+   * @publicApi
+   */
   async createOne({
     data,
     headers,
@@ -50,6 +103,28 @@ export class UniversitiesModule implements IUniversitiesModule {
     return handleResult<University>(response);
   }
 
+  /**
+   * Update an existing university
+   *
+   * @example Example usage:
+   * ```ts
+   * const updatedUniversity = await module.updateOne({
+   *   data: {
+   *     id: 1,
+   *     name: "New Name",
+   *     brief: "New description"
+   *   },
+   *   headers: {
+   *     authorization: "Bearer token"
+   *   }
+   * })
+   * ```
+   *
+   * @param args Object containing updated university data and auth headers
+   * @returns Promise resolving to updated University object
+   *
+   * @publicApi
+   */
   async updateOne({
     data,
     headers,
@@ -69,6 +144,24 @@ export class UniversitiesModule implements IUniversitiesModule {
     return handleResult<University>(response);
   }
 
+  /**
+   * Delete a university by id
+   *
+   * @example Example usage:
+   * ```ts
+   * const deletedUniversity = await module.deleteOne({
+   *   id: 1,
+   *   headers: {
+   *     authorization: "Bearer token"
+   *   }
+   * })
+   * ```
+   *
+   * @param args Object containing university id and auth headers
+   * @returns Promise resolving to deleted University object
+   *
+   * @publicApi
+   */
   async deleteOne({ id, headers }: DeleteFacultyArgs): Promise<University> {
     const h = getDefaultHeaders();
 
