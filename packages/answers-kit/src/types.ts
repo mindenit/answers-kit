@@ -17,6 +17,16 @@ interface Subject {
   facultyId: number;
 }
 
+interface Statistics {
+  courses: number;
+  faculties: number;
+  questions: number;
+  subjects: number;
+  tests: number;
+  universities: number;
+  users: number;
+}
+
 interface Ping {
   message: string;
 }
@@ -62,6 +72,7 @@ export type {
   Question,
   RequestHeaders,
   SortingOptions,
+  Statistics,
   Subject,
   Test,
 };
