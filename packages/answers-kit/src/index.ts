@@ -49,3 +49,20 @@ export class AnswersKit {
     this.questions = new QuestionsModule(this.apiUrl);
   }
 }
+
+export type {
+  Course,
+  Faculty,
+  Order,
+  Ping,
+  Question,
+  RequestHeaders,
+  SortingOptions,
+  Statistics,
+  Subject,
+  Test,
+  TestData,
+  TestMeta,
+  TestResponse,
+  University
+} from './types.js'

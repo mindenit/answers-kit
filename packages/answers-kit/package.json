@@ -1,26 +1,59 @@
 {
   "name": "@mindenit/answers-kit",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Mindenit Answers API client for Node.js",
   "type": "module",
-  "main": "index.js",
-  "engines": {
-    "node": ">= 20.x"
-  },
-  "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --minify",
-    "playground": "tsx playground.ts",
-    "typecheck": "tsc --noEmit"
-  },
   "keywords": [
     "mindenit-answers",
     "answers-kit"
   ],
   "author": "Mindenit team",
   "license": "GPL-3.0-only",
+  "homepage": "https://github.com/mindenit/answers-kit",
+  "maintainers": [
+    {
+      "name": "Kyrylo Savieliev",
+      "url": "https://github.com/OneLiL05"
+    },
+    {
+      "name": "Roman",
+      "url": "https://github.com/perkinson1251"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mindenit/answers-kit"
+  },
+  "bugs": {
+    "url": "https://github.com/mindenit/answers-kit"
+  },
+  "engines": {
+    "node": ">= 20.x"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      },
+      "require": {
+        "default": "./dist/index.cjs",
+        "types": "./dist/index.d.cts"
+      }
+    }
+  },
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --minify",
+    "playground": "tsx playground.ts",
+    "typecheck": "tsc --noEmit"
+  },
   "devDependencies": {
     "tsup": "^8.3.5",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3"
-  }
+  },
+  "private": false
 }
