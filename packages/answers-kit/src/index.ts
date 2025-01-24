@@ -64,5 +64,6 @@ export type {
   TestData,
   TestMeta,
   TestResponse,
-  University
-} from './types.js'
+  University,
+} from './types.js';
+export { AnswersError } from './error.js';
