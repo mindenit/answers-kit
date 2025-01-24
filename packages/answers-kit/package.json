@@ -1,6 +1,6 @@
 {
   "name": "@mindenit/answers-kit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Mindenit Answers API client for Node.js",
   "type": "module",
   "keywords": [
