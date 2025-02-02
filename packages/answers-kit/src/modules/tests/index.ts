@@ -7,7 +7,6 @@ import type {
   CreateTestQuestionsArgs,
   DeleteTestArgs,
   FindManyTestArgs,
-  FindOneTestArgs,
   FindTestQuestionsArgs,
   ITestsModule,
   UpdateTestArgs,
@@ -33,7 +32,7 @@ export class TestsModule implements ITestsModule {
    * @publicApi
    * */
 
-  async findOne({ id }: FindOneTestArgs): Promise<TestData> {
+  async findOne(id: number): Promise<TestData> {
     const response = await fetch(`${this.url}/test/${id}`);
 
     return handleResult<TestData>(response);

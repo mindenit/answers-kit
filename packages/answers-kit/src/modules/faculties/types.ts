@@ -35,6 +35,7 @@ interface DeleteFacultyArgs {
 }
 
 interface IFacultiesModule {
+  findOne: (id: number) => Promise<Faculty>;
   findMany: (args?: FindManyFacultyArgs) => Promise<Faculty[]>;
   findOneSubjects: (id: number) => Promise<Subject[]>;
   createOne: (args: CreateFacultyArgs) => Promise<Faculty>;

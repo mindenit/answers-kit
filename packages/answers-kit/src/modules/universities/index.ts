@@ -19,6 +19,24 @@ export class UniversitiesModule implements IUniversitiesModule {
   }
 
   /**
+   * Find an university by id
+   *
+   * @example Example usage:
+   * ```ts
+   * const university = await answersKit.universities.findOne(1)
+   * ```
+   *
+   * @returns an university object
+   *
+   * @publicApi
+   * */
+  async findOne(id: number): Promise<University> {
+    const response = await fetch(`${this.url}/universities/${id}`);
+
+    return handleResult<University>(response);
+  }
+
+  /**
    * Retrieve a list of all universities
    *
    * @example Example usage:

@@ -38,6 +38,7 @@ interface DeleteUniversityArgs {
 }
 
 interface IUniversitiesModule {
+  findOne: (id: number) => Promise<University>;
   findMany: (args?: FindManyUniversityArgs) => Promise<University[]>;
   findOneFaculties: (
     args: FindManyUniversityFacultiesArgs,

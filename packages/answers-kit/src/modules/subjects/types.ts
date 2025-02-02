@@ -30,6 +30,7 @@ interface DeleteSubjectArgs {
 }
 
 interface ISubjectModule {
+  findOne: (id: number) => Promise<Subject>;
   findMany: (args?: FIndManySubjectArgs) => Promise<Subject[]>;
   createOne: (args: CreateSubjectArgs) => Promise<Subject>;
   updateOne: (args: UpdateSubjectArgs) => Promise<Subject>;

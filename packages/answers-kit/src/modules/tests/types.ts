@@ -9,10 +9,6 @@ import type {
 
 type TestSortableFields = 'year';
 
-interface FindOneTestArgs {
-  id: number;
-}
-
 interface FindManyTestValues {
   offset: number;
   limit: number;
@@ -75,7 +71,7 @@ interface CreateTestQuestionsArgs {
 }
 
 interface ITestsModule {
-  findOne: (args: FindOneTestArgs) => Promise<TestData>;
+  findOne: (id: number) => Promise<TestData>;
   findMany: (args?: FindManyTestArgs) => Promise<TestResponse>;
   findOneQuestions: (args: FindTestQuestionsArgs) => Promise<Question[]>;
   createOne: (args: CreateTestArgs) => Promise<Test>;
@@ -92,7 +88,6 @@ export type {
   DeleteTestArgs,
   FindManyTestArgs,
   FindManyTestValues,
-  FindOneTestArgs,
   FindTestQuestionsArgs,
   ITestsModule,
   TestSortableFields,

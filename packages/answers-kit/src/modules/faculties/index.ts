@@ -18,6 +18,24 @@ export class FacultiesModule implements IFacultiesModule {
   }
 
   /**
+   * Find a faculty by id
+   *
+   * @example Example usage:
+   * ```ts
+   * const faculty = await answersKit.faculties.findOne(1)
+   * ```
+   *
+   * @returns a faculty object
+   *
+   * @publicApi
+   * */
+  async findOne(id: number): Promise<Faculty> {
+    const response = await fetch(`${this.url}/faculties/${id}`);
+
+    return handleResult<Faculty>(response);
+  }
+
+  /**
    * Find all faculties
    *
    * @example Example usage:

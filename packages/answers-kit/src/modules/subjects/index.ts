@@ -18,6 +18,24 @@ export class SubjectsModule implements ISubjectModule {
   }
 
   /**
+   * Find a subject by id
+   *
+   * @example Example usage:
+   * ```ts
+   * const faculty = await answersKit.subjects.findOne(1)
+   * ```
+   *
+   * @returns a subject object
+   *
+   * @publicApi
+   * */
+  async findOne(id: number): Promise<Subject> {
+    const response = await fetch(`${this.url}/subjects/${id}`);
+
+    return handleResult<Subject>(response);
+  }
+
+  /**
    * Find all subjects
    *
    * @example Example usage:
