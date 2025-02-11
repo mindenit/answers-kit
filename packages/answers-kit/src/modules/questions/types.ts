@@ -4,7 +4,7 @@ interface FindManyQuestionArgs {
   sorting?: SortingOptions;
 }
 
-interface FIndManyQuestionSearchArgs {
+interface FindManyQuestionSearchArgs {
   query: string;
 }
 
@@ -35,7 +35,7 @@ interface DeleteQuestionArgs {
 }
 
 interface IQuestionsModule {
-  findManySearch: (args: FIndManyQuestionSearchArgs) => Promise<Question[]>;
+  findManySearch: (args: FindManyQuestionSearchArgs) => Promise<Question[]>;
   findMany: (args?: FindManyQuestionArgs) => Promise<Question[]>;
   createOne: (args: CreateQuestionArgs) => Promise<Question>;
   updateOne: (args: UpdateQuestionArgs) => Promise<Question>;
@@ -47,7 +47,7 @@ export type {
   CreateQuestionValues,
   DeleteQuestionArgs,
   FindManyQuestionArgs,
-  FIndManyQuestionSearchArgs,
+  FindManyQuestionSearchArgs,
   IQuestionsModule,
   UpdateQuestionArgs,
   UpdateQuestionValues,

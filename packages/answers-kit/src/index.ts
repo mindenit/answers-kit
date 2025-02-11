@@ -66,4 +66,29 @@ export type {
   TestResponse,
   University,
 } from './types.js';
+export type {
+  CreateCourseValues,
+  UpdateCourseValues,
+} from './modules/courses/types.js';
+export type {
+  CreateFacultyValues,
+  UpdateFacultyValues,
+} from './modules/faculties/types.js';
+export type {
+  CreateQuestionValues,
+  UpdateQuestionValues,
+} from './modules/questions/types.js';
+export type {
+  CreateSubjectValues,
+  UpdateSubjectValues,
+} from './modules/subjects/types.js';
+export type {
+  CreateTestValues,
+  CreateTestQuestionsValues,
+  UpdateTestValues,
+} from './modules/tests/types.js';
+export type {
+  CreateUniversityValues,
+  UpdateUniversityValues,
+} from './modules/universities/types.js';
 export { AnswersError } from './error.js';

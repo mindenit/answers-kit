@@ -6,7 +6,7 @@ import type {
   CreateQuestionArgs,
   DeleteQuestionArgs,
   FindManyQuestionArgs,
-  FIndManyQuestionSearchArgs,
+  FindManyQuestionSearchArgs,
   IQuestionsModule,
   UpdateQuestionArgs,
 } from './types.js';
@@ -61,7 +61,7 @@ export class QuestionsModule implements IQuestionsModule {
    */
   async findManySearch({
     query,
-  }: FIndManyQuestionSearchArgs): Promise<Question[]> {
+  }: FindManyQuestionSearchArgs): Promise<Question[]> {
     const url = `${this.url}/questions/search?query=${query}`;
     const response = await fetch(url);
 
