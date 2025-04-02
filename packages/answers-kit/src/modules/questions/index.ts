@@ -136,7 +136,7 @@ export class QuestionsModule implements IQuestionsModule {
 
     h.append('Authorization', headers.authorization);
 
-    const response = await fetch(`${this.url}/questions/${data.id}`, {
+    const response = await fetch(`${this.url}/questions/${id}`, {
       method: 'PUT',
       headers: h,
       body: JSON.stringify(rest),

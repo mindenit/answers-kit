@@ -161,6 +161,7 @@ export class FacultiesModule implements IFacultiesModule {
    *     authorization: 'your-answers-auth-token'
    *  },
    * })
+   * ```
    *
    * @returns a faculty object
    *

@@ -65,6 +65,7 @@ export type {
   TestMeta,
   TestResponse,
   University,
+  BaseSort,
 } from './types.js';
 export type {
   CreateCourseValues,

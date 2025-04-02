@@ -48,6 +48,7 @@ interface TestMeta {
 }
 
 interface Test {
+  name: string;
   id: number;
   createdAt: string;
   updatedAt: string;
