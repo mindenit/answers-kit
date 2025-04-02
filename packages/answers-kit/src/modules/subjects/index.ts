@@ -5,7 +5,7 @@ import { appendSortingParams } from '@/utils/url.js';
 import type {
   CreateSubjectArgs,
   DeleteSubjectArgs,
-  FIndManySubjectArgs,
+  FindManySubjectArgs,
   ISubjectModule,
   UpdateSubjectArgs,
 } from './types.js';
@@ -48,7 +48,7 @@ export class SubjectsModule implements ISubjectModule {
    * @publicApi
    */
 
-  async findMany(args?: FIndManySubjectArgs): Promise<Subject[]> {
+  async findMany(args?: FindManySubjectArgs): Promise<Subject[]> {
     const url = appendSortingParams(`${this.url}/subjects`, args?.sorting);
     const response = await fetch(url);
 

@@ -1,7 +1,7 @@
 import type { Question, Test, TestData, TestResponse } from '@/types.js';
 import { getDefaultHeaders } from '@/utils/headers.js';
 import { handleResult } from '@/utils/result.js';
-import { appendSortingParams } from '@/utils/url.js';
+import { appendQueryParams, appendSortingParams } from '@/utils/url.js';
 import type {
   CreateTestArgs,
   CreateTestQuestionsArgs,
@@ -52,7 +52,12 @@ export class TestsModule implements ITestsModule {
    * */
 
   async findMany(args?: FindManyTestArgs): Promise<TestResponse> {
-    const url = appendSortingParams(`${this.url}/tests`, args?.sorting);
+    const url = appendQueryParams(
+      `${this.url}/tests`,
+      args?.options,
+      args?.sorting,
+    );
+
     const response = await fetch(url);
 
     return response.json();
