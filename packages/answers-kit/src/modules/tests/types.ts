@@ -10,13 +10,13 @@ import type {
 type TestSortableFields = 'year';
 
 interface FindManyTestValues {
-  offset: number;
-  limit: number;
-  name: string;
-  isVerified: boolean;
-  subjectId: number;
-  courseId: number;
-  year: number;
+  offset?: number;
+  limit?: number;
+  name?: string;
+  isVerified?: boolean;
+  subjectId?: number;
+  courseId?: number;
+  year?: number;
 }
 
 interface FindManyTestArgs {

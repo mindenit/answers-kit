@@ -1,6 +1,6 @@
 import type { RequestHeaders, SortingOptions, Subject } from '@/types.js';
 
-interface FIndManySubjectArgs {
+interface FindManySubjectArgs {
   sorting?: SortingOptions;
 }
 
@@ -31,7 +31,7 @@ interface DeleteSubjectArgs {
 
 interface ISubjectModule {
   findOne: (id: number) => Promise<Subject>;
-  findMany: (args?: FIndManySubjectArgs) => Promise<Subject[]>;
+  findMany: (args?: FindManySubjectArgs) => Promise<Subject[]>;
   createOne: (args: CreateSubjectArgs) => Promise<Subject>;
   updateOne: (args: UpdateSubjectArgs) => Promise<Subject>;
   deleteOne: (args: DeleteSubjectArgs) => Promise<Subject>;
@@ -41,7 +41,7 @@ export type {
   CreateSubjectArgs,
   CreateSubjectValues,
   DeleteSubjectArgs,
-  FIndManySubjectArgs,
+  FindManySubjectArgs,
   ISubjectModule,
   UpdateSubjectArgs,
   UpdateSubjectValues,
