@@ -16,11 +16,11 @@ export const appendQueryParams = <T extends string>(
   const urlParams = new URLSearchParams();
 
   if (params) {
-    Object.entries(params).forEach(([key, value]) => {
-      if (value !== undefined && value !== null) {
+    for (const [key, value] of Object.entries(params)) {
+      if (value) {
         urlParams.append(key, String(value));
       }
-    });
+    }
   }
 
   if (sorting) {
